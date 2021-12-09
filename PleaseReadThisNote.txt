@@ -1,0 +1,4 @@
+To see the changes after any add/delete/edit functionality please logout and then log in.
+You can also view UI changes after API alterations by switching to another tab and coming back to the tab.
+For example, after adding/deleting/editing a meal you can switch to excersize and then
+come back to the meals view to see the changes you have done. 
