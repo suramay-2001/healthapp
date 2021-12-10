@@ -2,7 +2,8 @@ import React from "react";
 
 import LoginView from "./LoginView";
 import SignupView from "./SignupView";
-import Homepage from "./Homepage";
+import Homepage from "./Profilecomponents/Homepage";
+import Wearable from "./Wearcomps/Wearable";
 import { Button } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -58,6 +59,12 @@ class App extends React.Component {
       
       <BottomTab.Navigator>
         <BottomTab.Screen name="Home" component={(props)=>(<Homepage
+    {...props}
+    username={this.state.username}
+    accessToken={this.state.accessToken}
+    revokeAccessToken={this.revokeAccessToken}
+  />)} />
+  <BottomTab.Screen name="Wearable" component={(props)=>(<Wearable
     {...props}
     username={this.state.username}
     accessToken={this.state.accessToken}
