@@ -20,27 +20,30 @@ export default class Pulse extends Component {
                     Quick Call
                 </Card.Title>
                 <Card.Divider>
-                    <Card>
+                    <Card >
                         <TouchableOpacity>
                         <Card.Title>Doctor</Card.Title>
                         <Card.Divider>
-
+                            <View style={{justiftyContent:"center", alignItems:"center"}}>
                             <Icon 
                             name='doctor'
                             size={30}
                             color='black'
+                            style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}
                             />
+                            </View>
                         </Card.Divider>
                         </TouchableOpacity>
                         <TouchableOpacity>
                         <Card.Title>CareTaker</Card.Title>
                         <Card.Divider>
-
+                            <View style={{justiftyContent:"center", alignItems:"center"}}>
                             <Icon 
                             name='nurse'
                             size={30}
                             color='black'
                             />
+                            </View>
                         </Card.Divider>
                         </TouchableOpacity>
                     </Card>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-//import {CircularProgress} from 'react-native-circular-progress-indicator';
-import {StyleSheet,Dimensions,View,Text,ScrollView,Modal,TextInput,TouchableOpacity} from 'react-native'
+//import CircularProgress from 'react-native-circular-progress-indicator';
+import {StyleSheet,Dimensions,View,Text,ScrollView,SafeAreaView,TextInput,TouchableOpacity} from 'react-native'
 import {Button,Card} from 'react-native-elements';
-import Icon from "react-native-vector-icons/FontAwesome5";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 export default class Wearable extends Component {
     constructor(props){
     super(props)
@@ -14,16 +14,28 @@ export default class Wearable extends Component {
     }
     render() {
         return (
+            <SafeAreaView style={styles.container}>
            <ScrollView>
-               <View>
+               {/* <CircularProgress
+  value={60}
+  activeStrokeWidth={12}
+  textColor={'#ecf0f1'}
+/> */}
+<View style={styles.batteryview}>
+    <Icon 
+    name='battery-60'
+    size={60}
+    color='black'
+    style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}
+    />
+    <Text style={styles.cardtext}> {' '+this.state.battery +' %'}</Text>
 
-                   <Text>{this.state.battery+'%'}</Text>
-               </View>
-
+</View>
+              
                <Card>
                    <Card.Title>Device Health</Card.Title>
                    <Card.Divider>
-                       <Text> {this.state.health}</Text>
+                       <Text style={styles.cardtext}> {this.state.health}</Text>
                    </Card.Divider>
 
 
@@ -31,21 +43,35 @@ export default class Wearable extends Component {
                <Card>
                    <Card.Title>Contact Support</Card.Title>
                    <Card.Divider>
-                       <Text>{this.state.support}</Text>
+                       <Text style={styles.cardtext}>{this.state.support}</Text>
                    </Card.Divider>
 
                </Card>
                
                   
-               {/* <CircularProgress
-  value={60}
-  activeStrokeWidth={12}
-  textColor={'#ecf0f1'}
-/> */}
-
-               <Text>Hello world</Text>
+            
 
            </ScrollView>
+           </SafeAreaView>
         )
     }
 }
+
+const styles=StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#E6DDC4",
+      },
+      batteryview:{
+        padding:10,
+        textAlign: 'justify',
+        margin:6,
+        justifyContent:"center",
+         alignItems:"center"
+    },
+    cardtext:{
+        margin: 6,
+        textAlign: 'center',
+        fontSize:18
+    },
+})

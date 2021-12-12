@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {StyleSheet,Dimensions,View,Text,ScrollView,Modal,TextInput,TouchableOpacity} from 'react-native'
+import {StyleSheet,Dimensions,View,Text,ScrollView,SafeAreaView,TextInput,TouchableOpacity} from 'react-native'
 import {Button,Card} from 'react-native-elements';
 import Icon from "react-native-vector-icons/FontAwesome5";
 import Pulse from './Pulse';
@@ -24,18 +24,21 @@ export default class Homepage extends Component {
     }
     render() {
         return (
-            <ScrollView>
+            <SafeAreaView style={styles.container}>
+            <ScrollView >
                 <Card>
                     <Card.Title>
                         Heart Rate 
                     </Card.Title>
                     <Card.Divider>
+                        <View style={styles.pulseview}>
                         <Icon 
                         name='heartbeat'
-                        size={50}
+                        size={65}
                         color='red'
                         />
-                        <Text>{this.state.heartrate}</Text>
+                        <Text style={styles.cardtext}>{this.state.heartrate}</Text>
+                        </View>
                         </Card.Divider>
                 </Card>
                 <Card>
@@ -61,7 +64,26 @@ export default class Homepage extends Component {
                 </Card>
 
             </ScrollView>
+            </SafeAreaView>
            
         )
     }
 }
+const styles=StyleSheet.create({
+      container: {
+        flex: 1,
+        backgroundColor: "#E6DDC4",
+      },
+      pulseview:{
+        padding:10,
+        textAlign: 'justify',
+        margin:6,
+        justifyContent:"center",
+         alignItems:"center"
+    },
+    cardtext:{
+        margin: 6,
+        textAlign: 'center',
+        fontSize:18
+    },
+})

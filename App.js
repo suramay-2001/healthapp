@@ -119,7 +119,7 @@ class App extends React.Component {
               <AuthStack.Screen
                 name="SignIn"
                 options={{
-                  title: "Fitness Tracker Welcome",
+                  title: "MobiHealth Welcome",
                 }}
               >
                 {(props) => <LoginView {...props} login={this.login} />
@@ -129,7 +129,7 @@ class App extends React.Component {
               <AuthStack.Screen
                 name="SignUp"
                 options={{
-                  title: "Fitness Tracker Signup",
+                  title: "MobiHealth Signup",
                 }}
               >
                 {(props) => <SignupView {...props} />}
@@ -137,9 +137,9 @@ class App extends React.Component {
             </>
           ) : (
             <AuthStack.Screen
-              name="FitnessTracker"
+              name="MobiHealth"
               options={{
-                title: "Fitness Tracker",
+                title: "MobiHealth",
                 headerLeft:()=>(
                   <Button  title='sign out' onPress={
                       this.revokeAccessToken

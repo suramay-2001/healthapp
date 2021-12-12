@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
-
+import {Card} from 'react-native-elements';
 class SignupView extends React.Component {
   constructor() {
     super();
@@ -56,6 +56,9 @@ class SignupView extends React.Component {
         <Text>Glad to have you here!</Text>
         <Text>Please create an account below.</Text>
         <View style={styles.space} />
+        <Card styles={{padding:10,backgroundcolor:'#F6F2D4'}}>
+        <Card.Title>Enter Details</Card.Title>
+        <Card.Divider>
         <TextInput
           style={styles.input}
           underlineColorAndroid="transparent"
@@ -78,19 +81,21 @@ class SignupView extends React.Component {
         <View style={styles.space} />
         <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
           <Button
-            color="#942a21"
+            color="#000"
             style={styles.buttonInline}
             title="Create Account"
             onPress={this.handleCreateAccount}
           />
           <View style={styles.spaceHorizontal} />
           <Button
-            color="#a1635f"
+            color="#000"
             style={styles.buttonInline}
-            title="Nevermind!"
+            title="Sign in"
             onPress={this.backToLogin}
           />
         </View>
+        </Card.Divider>
+        </Card>
       </View>
     );
   }
@@ -99,7 +104,7 @@ class SignupView extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#E6DDC4",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -109,7 +114,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   space: {
-    width: 20,
+    width: 20, // or whatever size you need
     height: 20,
   },
   spaceHorizontal: {
